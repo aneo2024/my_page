@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人主页</title>
+    <link rel="stylesheet" href="style/index.css">
+    </link>
+</head>
+
+<body>
+    <header>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+        <h1>欢迎来到我的个人主页</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#about">关于我</a></li>
+            <li><a href="#projects">项目</a></li>
+            <li><a href="#contact">联系我</a></li>
+        </ul>
+    </nav>
+    <section id="about">
+        <h2>关于我</h2>
+        <p>这里是关于我的介绍。</p>
+    </section>
+
+    <section id="projects">
+        <h2>我的项目</h2>
+        <p>这里是我参与过的一些项目。</p>
+        <ul>
+            <li>项目一:</li>
+            <li>项目二</li>
+            <li>项目三</li>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2>联系方式</h2>
+        <p>你可以通过以下方式联系我：</p>
+        <ul>
+            <li>Email: <a href="mailto:2198925485@qq.com"></a></li>
+            <li>GitHub: <a href="https://github.com/aneo2024">aneo2024</a></li>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 我的个人主页。所有权利保留。</p>
+    </footer>
+
+    <section id="about">
+        <h2>关于我</h2>
+        <p>你好，我是[你的名字]，一名[你的职业或兴趣]。欢迎浏览我的个人网页！</p>
+        <button onclick="showMore()">点击查看更多</button>
+        <p id="more" style="display:none;">这里是更多关于我的信息。</p>
+    </section>
+
+    <script>
+        function showMore() {
+            var moreContent = document.getElementById('more');
+            if (moreContent.style.display === 'none') {
+                moreContent.style.display = 'block';
+            } else {
+                moreContent.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+
+</html>
