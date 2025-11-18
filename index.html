@@ -1,53 +1,115 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>个人主页</title>
-    <link rel="stylesheet" href="style/index.css">
-    </link>
+
+    <!-- 第一步：先引入 Tailwind CSS CDN（必须在配置脚本之前） -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- 第二步：写 Tailwind 自定义配置脚本（紧跟 CDN 引入） -->
+    <script>
+        tailwind.config({
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1DA1F2', // 自定义主色（Twitter蓝）
+                        secondary: '#14171A', // 自定义辅助色（深灰）
+                    },
+                    fontFamily: {
+                        sans: ['Inter', '思源黑体', 'sans-serif'], // 自定义无衬线字体
+                    }
+                }
+            }
+        });
+    </script>
+
+    <!-- 第三步：再引入其他资源（Font Awesome、自定义CSS） -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/custom.css">
 </head>
 
-<body>
-    <header>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-        <h1>欢迎来到我的个人主页</h1>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="#about">关于我</a></li>
-            <li><a href="#projects">项目</a></li>
-            <li><a href="#contact">联系我</a></li>
-        </ul>
+<body class="bg-gray-50 font-sans">
+    <!-- 导航栏、页面内容等 -->
+    <nav class="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="text-primary text-xl font-bold">Aliya的作品集</a>
+            <!-- 桌面端导航 -->
+            <div class="hidden md:flex space-x-6">
+                <a href="#about" class="hover:text-primary transition-colors">关于我</a>
+                <a href="#skills" class="hover:text-primary transition-colors">技能</a>
+                <a href="#projects" class="hover:text-primary transition-colors">经历</a>
+                <a href="#contact" class="hover:text-primary transition-colors">联系我</a>
+            </div>
+            <!-- 移动端菜单按钮 -->
+            <button id="menuBtn" class="md:hidden text-gray-700">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+        <!-- 移动端折叠菜单（默认隐藏） -->
+        <div id="mobileMenu" class="md:hidden hidden bg-white px-4 py-2">
+            <a href="#about" class="block py-2 hover:text-primary">关于我</a>
+            <a href="#skills" class="block py-2 hover:text-primary">技能</a>
+            <a href="#projects" class="block py-2 hover:text-primary">经历</a>
+            <a href="#contact" class="block py-2 hover:text-primary">联系我</a>
+        </div>
     </nav>
-    <section id="about">
-        <h2>关于我</h2>
-        <p>这里是关于我的介绍。</p>
+    <!-- Banner区域 -->
+    <section class="pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-r from-primary/5 to-secondary/5">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-8 md:mb-0">
+                <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold text-gray-800 leading-tight">
+                    我是<span class="text-primary">Aliya</span><br>
+                    旅行者
+                </h1>
+                <p class="mt-4 text-gray-600 text-lg max-w-lg">
+                    擅长在生活中找乐子，喜欢学习，喜欢玩。
+                </p>
+                <a href="#projects"
+                    class="mt-6 inline-block bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors">
+                    查看我的经历
+                </a>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <!-- 头像（响应式缩放） -->
+                <img src="assets/images/aliya.jpg" alt="个人头像"
+                    class="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover shadow-lg">
+            </div>
+        </div>
+    </section>
+    <!-- 技能区域 -->
+    <section id="skills" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">我的技能</h2>
+            <div class="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- 技能项1 -->
+                <div>
+                    <div class="flex justify-between mb-2">
+                        <span class="font-medium text-gray-700">HTML/CSS</span>
+                        <span class="text-gray-600">90%</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-3">
+                        <div class="bg-primary h-3 rounded-full" style="width: 90%"></div>
+                    </div>
+                </div>
+                <!-- 技能项2 -->
+                <div>
+                    <div class="flex justify-between mb-2">
+                        <span class="font-medium text-gray-700">JavaScript</span>
+                        <span class="text-gray-600">80%</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-3">
+                        <div class="bg-primary h-3 rounded-full" style="width: 80%"></div>
+                    </div>
+                </div>
+                <!-- 可添加更多技能项 -->
+            </div>
+        </div>
     </section>
 
-    <section id="projects">
-        <h2>我的项目</h2>
-        <p>这里是我参与过的一些项目。</p>
-        <ul>
-            <li>项目一:</li>
-            <li>项目二</li>
-            <li>项目三</li>
-        </ul>
-    </section>
-
-    <section id="contact">
-        <h2>联系方式</h2>
-        <p>你可以通过以下方式联系我：</p>
-        <ul>
-            <li>Email: <a href="mailto:2198925485@qq.com"></a></li>
-            <li>GitHub: <a href="https://github.com/aneo2024">aneo2024</a></li>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 我的个人主页。所有权利保留。</p>
-    </footer>
-
+    <script src="js/main.js"></script>
 </body>
 
 </html>
