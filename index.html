@@ -11,7 +11,7 @@
 
     <!-- 第二步：写 Tailwind 自定义配置脚本（紧跟 CDN 引入） -->
     <script>
-        tailwind.config({
+        tailwind.config={
             theme: {
                 extend: {
                     colors: {
@@ -23,7 +23,7 @@
                     }
                 }
             }
-        });
+        };
     </script>
 
     <!-- 第三步：再引入其他资源（Font Awesome、自定义CSS） -->
@@ -34,7 +34,16 @@
 <body class="bg-gray-50 font-sans">
     <!-- 导航栏、页面内容等 -->
     <nav class="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
+        <!-- fixed: 固定定位 -->
+        <!-- top-0 left-0 right-0: 固定在屏幕顶部，左右边缘对齐 -->
+        <!-- bg-white: 白色背景 -->
+        <!-- shadow-md: 中等阴影效果 -->
+        <!-- z-50: 设置较高的层级，保证导航栏在最上层 -->
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- container: 限制容器最大宽度 -->
+            <!-- mx-auto: 水平居中 -->
+            <!-- px-4 py-3: 内边距设置 -->
+            <!-- flex justify-between items-center: 使用弹性布局，子元素两端对齐并垂直居中 -->
             <a href="#" class="text-primary text-xl font-bold">Aliya的作品集</a>
             <!-- 桌面端导航 -->
             <div class="hidden md:flex space-x-6">
@@ -79,6 +88,17 @@
             </div>
         </div>
     </section>
+    <!-- 关于我-->
+    <section id="about" class="py-16 bg-white"> 
+        <div class="container mx-auto"> 
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">关于我</h2>
+            <div class="max-w-3xl mx-auto text-gray-700 text-lg space-y-6">
+                <p>你好！我是Aliya，一个热爱旅行和探索世界的人。从小我就喜欢冒险，喜欢去不同的地方体验不同的文化和风景。</p>
+                <p>旅行让我学会了适应变化，增强了我的沟通能力，也让我更加开放和包容。我相信每一次旅行都是一次成长的机会。</p>
+                <p>除了旅行，我还喜欢摄影和写作，通过镜头和文字记录下我所见所闻的美好瞬间。</p>
+            </div>
+
+    </section>
     <!-- 技能区域 -->
     <section id="skills" class="py-16 bg-white">
         <div class="container mx-auto px-4">
@@ -107,6 +127,31 @@
                 <!-- 可添加更多技能项 -->
             </div>
         </div>
+    </section>
+
+    <section id="projects" class="py-16 bg-blue">
+        <div class ="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8">我的项目</h2>
+            <div class="max-w-3xl mx-auto grid grid-cols-1 md: grid-cols-2 gap-8"></div>
+            <div class="project-card">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">暂时没有项目</h3>
+ 
+                </div>
+                </img>
+            </div>
+        </div>
+    </section>
+
+    <section id="contactFrom" class="py-16 bg-white">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-semibold mb-4">联系我</h2>
+            <div class="联系方式"联系方式>
+                <p class="text-gray-700 mb-2">邮箱:2198925485@qq.com</p>
+                <p class="text-gray-700">QQ：2198925485</p>
+            </div>
+       
+
     </section>
 
     <script src="js/main.js"></script>
